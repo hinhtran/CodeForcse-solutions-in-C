@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main()
+{
+    int a,b,c;
+    int sum=0;
+    scanf("%d%d", &a, &b);
+    sum = a;
+    while(1)
+    {
+        c = a/b;
+        // printf("%d\n", c);
+        a = c +(a % b);
+        // printf("%d\n", a);
+        sum += c;
+        
+        if(a<b)
+            break;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
