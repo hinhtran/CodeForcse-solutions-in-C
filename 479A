@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+int max(int g,int h)
+{
+    if (g > h)
+        return g;
+    else return h;
+}
+int main()
+{
+    int a,b,c;
+    scanf("%d\n%d\n%d", &a, &b, &c);
+    int ex1= a+b+c;
+    int ex2= a*b*c;
+    int ex3= a+b*c;
+    int ex4= a*b+c;
+    int ex5= a*(b+c);
+    int ex6= (a+b)*c;
+    // max = ex1 > ex2 ? ex1 :ex2;
+    // max1 = ex3 > ex4 ? ex3 : ex4;
+    // max2 = ex5 > ex6 ? ex5 : ex6;
+    int maxin = (max(ex1,max(ex2,max(ex3,max(ex4,max(ex5,ex6))))));
+    
+    printf("%d", maxin);
+    return 0;
+}
