@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int n,x,cnt=0;
+    scanf("%lld %lld", &n, &x);
+    for(int i=1; i<=n;i++)
+    {
+        if(x%i == 0 && x/i <= n)
+        {
+            cnt++;
+            // printf("%d\n",cnt);
+        }
+    }
+    printf("%lld\n", cnt);
+    return 0;
+}
