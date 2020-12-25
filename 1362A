@@ -1,0 +1,70 @@
+#include<stdio.h>
+int main()
+{
+    long long int t,a,b;
+    scanf("%lld", &t);
+    while(t--)
+    {
+        long long int c=0;
+        scanf("%lld %lld", &a, &b);
+        if(a == b)
+        {
+            printf("0\n");
+            continue;
+        }
+        if(a > b)
+        {
+            while(a > b)
+            {
+                if(a % 8 == 0 && a / 8 >= b)
+                {
+                    a /= 8;
+                    c++;
+                }
+                else if(a % 4 == 0 && a / 4 >= b)
+                {
+                    a /= 4;
+                    c++;
+                }
+                else if(a % 2 == 0 && a / 2 >= b)
+                {
+                    a /= 2;
+                    c++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        else
+        {
+            while(a < b)
+            {
+                if(a * 8 <= b)
+                {
+                    a *= 8;
+                    c++;
+                }
+                else if(a * 4 <= b)
+                {
+                    a *= 4;
+                    c++;
+                }
+                else if(a * 2 <= b)
+                {
+                    a *= 2;
+                    c++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        if(a == b)
+            printf("%lld\n", c);
+        else printf("-1\n");
+    }
+    return 0;
+}
