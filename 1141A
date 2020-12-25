@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main()
+{
+    int n, m, d, rec = -1;
+    scanf("%d %d", &n, &m);
+    
+    if(m % n == 0)
+    {
+        rec = 0;
+        d = m / n;
+        while(d % 2 == 0)
+        {
+            d /= 2;
+            rec++;
+        }
+        while(d % 3 == 0)
+        {
+            d /= 3;
+            rec++;
+        }
+        if(d != 1)
+            rec = -1;
+    }
+    printf("%d\n", rec);
+    return 0;
+}
