@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include<float.h>
+
+int main()
+{
+    double n, ans = 0;
+    scanf("%lf", &n)
+    for(double i = 1; i <= n; i++)
+        {
+            ans += (1 / i);
+        }
+    printf("%.12lf\n", ans);
+    return 0;
+}
+//tren codeforces loi testcase
