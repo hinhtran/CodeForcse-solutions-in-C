@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char s[101];
+    scanf("%s", &s);
+    int x = strlen(s);
+    if(x <= 4)
+        printf("%s", s);
+    if(x > 4)
+        printf("%c%d%c",s[0],x - 2,s[x-1]);
+    return 0;
+}
