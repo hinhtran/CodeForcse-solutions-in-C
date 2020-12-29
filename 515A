@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main()
+{
+    long a, b, s;
+    scanf("%ld %ld %ld", &a, &b, &s);
+    if(a < 0) a = -a;
+    if(b < 0) b = -b;
+    long sum = a + b;
+    if(s < sum || (sum - s) % 2 != 0)
+        printf("No");
+    else
+        printf("Yes");
+    return 0;
+}
