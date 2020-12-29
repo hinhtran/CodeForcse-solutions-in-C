@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int t;
+    scanf("%lld", &t);
+    while(t--)
+    {
+        long long int x, y, k;
+        scanf("%lld %lld %lld", &x, &y, &k);
+        long long int a = (k * (y + 1) - 1 + (x - 2)) / (x - 1);
+        printf("%lld\n", a + k);
+    }
+    return 0;
+}
