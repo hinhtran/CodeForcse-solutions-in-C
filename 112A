@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char first[100],second[100];
+    scanf("%s\n%s", first, second);
+    int x = strlen(first);
+    int temp =  0;
+    for(int i = 0; i < x; i++)
+    {
+        if(first[i] >= 'A' && first[i] <= 'Z')
+            first[i] = first[i] + 32;
+        if(second[i] >= 'A' && second[i] <= 'Z')
+            second[i] = second[i] + 32;
+    }
+    // printf("%s \n%s\n",first,second);
+    
+    for(int i = 0; i < x; i++)
+    {
+        if(first[i] < second[i])
+        {
+            temp = -1;
+            break;
+        }
+        if(first[i] > second[i])
+        {
+            temp = 1;
+            break;
+        }
+        // if(first[i] == second[i])
+        // {
+        //     temp = 0;
+        //     break;
+        // }
+        
+    }
+    printf("%d\n", temp);
+    return 0;
+}
