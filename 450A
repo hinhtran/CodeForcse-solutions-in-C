@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+    int n, m;
+    scanf("%d %d\n", &n, &m);
+    int currentMax = 0, lastChild = 0;
+    for(int i = 1; i <= n; i++)
+    {
+        int need;
+        scanf("%d", &need);
+        int temp = (need / m) + ((need % m) > 0);
+        // printf("%d ", temp);
+        if(temp >= currentMax)
+        {
+            currentMax = temp;
+            lastChild = i;
+        }
+    }
+    printf("%d\n", lastChild);
+}
