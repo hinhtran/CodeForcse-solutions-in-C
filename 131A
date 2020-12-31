@@ -1,22 +1,26 @@
 #include<stdio.h>
 #include<string.h>
+
 int main()
 {
-    char s[101];
+    int l = 0;
+    char s[100];
     scanf("%s", s);
-    for(int i=0; i < strlen(s); i++)
+    for(int i = 1; i < strlen(s); i++)
     {
-
-        if(s[i] <= 'Z' && s[i] >= 'A')
-            s[i] += 32;
-        if(s[0] >= 'a' && s[0] <= 'z' )
-            s[0] -= 32;
+        if(s[i] >= 65 && s[i] <= 90)
+            l++;
     }
-    printf("%s", s);
-    return 0; 
-    // for(int i=0; i < strlen(s); i++)
-    // {
-    //     if(s[i] >='0' && s[i] <='9')
-    //         break;
-    // }
+    if(l == strlen(s) - 1)
+    {
+        for(int i = 0; i < strlen(s); i++)
+        {
+            if(s[i] >= 65 && s[i] <= 90)
+            s[i] = s[i] + 32;
+            else if(s[i] >= 97 && s[i] <= 122)
+            s[i] = s[i] - 32;
+        }
+    }
+    printf("%s\n", s);
+    return 0;
 }
