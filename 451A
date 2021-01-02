@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+int main()
+{
+    int n, m, min = 0;
+    scanf("%d%d", &n, &m);
+    if(n < m)
+        min = n;
+    else min = m;
+    if(min % 2 == 0)
+        printf("Malvika\n");
+    else
+        printf("Akshat\n");
+    return 0;
+}
