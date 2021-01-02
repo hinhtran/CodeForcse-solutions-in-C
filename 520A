@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+int main()
+{
+    char s[102];
+    int n, cnt = 0;
+    scanf("%d", &n);
+    scanf("%s", s);
+    for(int i = 0; i < n; i++)
+    {
+        if(s[i] >= 65 && s[i] <= 90)
+        {
+            s[i] = s[i] + 32;
+        }
+    }
+    for(int i = 0; i < n-1; i ++)
+    {
+        for( int j = i + 1; j < n; j++)
+        {
+            if(s[i] > s[j])
+            {
+                int temp;
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+            }
+        }
+    }
+    for(int i = 0; i < n - 1; i++)
+    {
+        if(s[i] != s[i+1])
+        {
+            cnt ++;
+        }
+    }
+    if(cnt == 25)
+        printf("YES\n");
+    else
+        printf("NO\n");
+    return 0;
+}
