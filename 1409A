@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int t, a, b;
+    scanf("%lld", &t);
+    while(t--)
+    {
+        scanf("%lld %lld", &a, &b);
+        if(b < a)
+        {
+            int temp;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        long long int sub = 0, sum = 0, divv = 0, mod = 0;
+        sub = b - a;
+        divv = sub / 10;
+        mod = sub % 10;
+        sum = divv;
+        if(mod > 0)
+            sum++;
+        printf("%lld", sum);
+    }
+    return 0;
+}
