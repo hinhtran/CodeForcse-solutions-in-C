@@ -1,0 +1,73 @@
+#include<stdio.h>
+
+int max(int g, int h)
+{
+    if(g > h)
+        return g;
+    else
+        return h;
+}
+int main()
+{
+    long int n, a, b, c, k, ans = 0, rem;
+    scanf("%ld%ld%ld%ld", &n, &a, &b, &c);
+    for(int i = 0; i*a <= n; ++i)
+    {
+        for(int j = 0; i*a+j*b <= n; ++j)
+            {
+                rem = n - i*a - j*b;
+                if(rem % c == 0)
+                {
+                    k = rem / c;
+                    ans = max(i+j+k, ans);
+                }
+            }
+    }
+    printf("%ld\n", ans);
+    return 0;
+}
+
+
+
+//cach 2
+#include<stdio.h>
+#include<string.h>
+
+int max(int g, int h)
+{
+    if(g > h)
+        return g;
+    else
+        return h;
+}
+
+int min(int a, int b, int c)
+{
+    int minx = a;
+    if(b < minx)
+        minx = b;
+    if(c < minx)
+        minx = c;
+    return minx;
+}
+
+int main()
+{
+    int n, a, b, c;
+    scanf("%d%d%d%d", &n, &a, &b, &c);
+    int x, y, z, p = 0, i;
+    i = min(a,b,c);
+    for(x = i; x >= 0; x--)
+    {
+        for(y = 0; y <= i; y++)
+        {
+            z = abs((n - (a*x + b*y)) /  c);
+            if((a*x+b*y+c*z) == n)
+            {
+                p = max(p,x+y+z);
+            }
+        }
+    }
+    printf("%d\n", p);
+    return 0;
+}
