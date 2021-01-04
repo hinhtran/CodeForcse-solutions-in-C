@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+    int a,b;
+    scanf("%d%d", &a, &b);
+    if(a > b)
+        {
+            int temp;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+    b = (b - a) / 2;
+    printf("%d %d\n", a, b);
+    return 0;
+}
