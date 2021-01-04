@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+    int x[4], a, b, c;
+    for(int i = 0; i < 4; i++)
+        scanf("%d", &x[i]);
+    for(int i = 0; i < 4; i++)
+    {
+        for(int j = i + 1; j < 4; j++)
+        {
+            if(x[i] > x[j])
+            {
+                int temp;
+                temp = x[i];
+                x[i] = x[j];
+                x[j] = temp;
+            }
+        }
+    }
+    a = x[3] - x[0];
+    b = x[3] - x[1];
+    c = x[3] - x[2];
+    printf("%d %d %d", a, b, c);
+    return 0;
+}
