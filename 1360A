@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int main()
+{
+    int t, a, b, ans;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d %d", &a, &b);
+        int x = a*2;
+        int y = b*2;
+        if(x > y)
+        {
+            if(a > y)
+            {
+                printf("%d\n", a*a);
+            }
+            else
+            {
+                printf("%d\n", y*y);
+            }
+        }
+        else
+        {
+            if(b > x)
+            {
+                printf("%d\n", b*b);
+            }
+            else
+            {
+                printf("%d\n", x*x);
+            }
+        }
+    }
+    return 0;
+}
