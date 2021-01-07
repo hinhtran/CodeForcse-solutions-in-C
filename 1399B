@@ -1,0 +1,74 @@
+#include<stdio.h>
+
+int min(int st1, int st2)
+{
+    int minn = st1;
+    if(st1 > st2)
+    {
+        minn = st2;
+    }
+    return minn;
+}
+
+int main()
+{
+    int t, n;
+    long long int a[55], b[55];
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        long long int amin = 10000000001, bmin = 10000000001;
+        for(int i = 0; i < n; i++)
+        {
+            scanf("%lld", &a[i]);
+            if(amin > a[i])
+            {
+                amin = a[i];
+            }
+        }
+        
+        for(int i = 0; i < n; i++)
+        {
+            scanf("%lld", &b[i]);
+            if(bmin > b[i])
+            {
+                bmin = b[i];
+            }
+        }
+        long long int c = 0, m = 0;
+        for(int i = 0; i < n; i++)
+        {
+            if(a[i] > amin && b[i] > bmin)
+            {
+                m = min(a[i], b[i]);
+                a[i] = a[i] - (m - min(amin, bmin));
+                b[i] = b[i] - (m - min(amin, bmin));
+                c += (m - min(amin,bmin));
+                if(a[i] > amin)
+                {
+                    c += a[i] - amin;
+                    a[i] -= a[i] - amin;
+                }
+                else if(b[i] > bmin)
+                {
+                    c += b[i] - bmin;
+                    b[i] -= b[i] - bmin;
+                }
+            }
+            else if(a[i] == amin && b[i] > bmin)
+            {
+                c += b[i] - bmin;
+                b[i] -= b[i] - bmin;
+            }
+            else if(a[i] > amin && b[i] == bmin)
+            {
+                c += a[i] - amin;
+                a[i] -= a[i] - amin;
+            }
+        }
+        printf("%lld\n", c);
+    }
+    return 0;
+    
+}
