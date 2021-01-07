@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+int min(int st1, int st2)
+{
+    if(st1 > st2)
+    {
+        return st2;
+    }
+    else
+    {
+        return st1;
+    }
+}
+
+int main()
+{
+    int a[60];
+    int t, n, detal;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        for(int i = 1; i <= n; i++)
+        {
+            scanf("%d", &a[i]);
+        }
+        for(int i = 1; i <= n; i++)
+        {
+            for(int j = i+ 1; j <= n; j++)
+            {
+                if(a[i] > a[j])
+                {
+                    int temp;
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        detal = 1010;
+        for(int i = 2; i <= n; i++)
+        {
+            detal = min(a[i]-a[i-1], detal);
+        }
+        printf("%d\n", detal);
+    }
+    return 0;
+}
