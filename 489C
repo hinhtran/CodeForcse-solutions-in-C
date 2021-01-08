@@ -1,0 +1,42 @@
+#include<stdio.h>
+
+int min(int st1, int st2)
+{
+    if(st1 > st2)
+        return st2;
+    else
+        return st1;
+}
+int max(int st3, int st4)
+{
+    if(st3 > st4)
+        return st3;
+    else
+        return st4;
+}
+int main()
+{
+    int m, s, i, k;
+    scanf("%d %d", &m, &s);
+    if(s < 1 && m > 1 || s > m*9)
+        printf("-1 -1\n");
+    else
+    {
+        for(i = m - 1, k = s; i >= 0; i--)
+        {
+            int j = max(0, k - 9*i);
+            if(j == 0 && i == m - 1 && k)
+                j = 1;
+            printf("%d", j);
+            k -= j;
+        }
+        printf(" ");
+        for(i = m - 1, k = s; i >= 0; i--)
+        {
+            int j = min(9,k);
+            printf("%d", j);
+            k -= j;
+        }
+    }
+    return 0;
+}
