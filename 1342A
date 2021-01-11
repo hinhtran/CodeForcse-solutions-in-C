@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void swap(long long int st1, long long int st2)
+{
+    long int temp;
+    temp = st1;
+    st1 = st2;
+    st2 = temp;
+}
+
+int main()
+{
+    int t;
+    long long int x, y, a, b;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%lld %lld \n%lld %lld",&x,&y,&a,&b);
+        if(x > y)
+            swap(x,y);
+        long long int ans1 = 0, ans2 = 0;
+        ans1 = x*a + y*b;
+        long long z = y - x;
+        ans2 = z*a + x*b;
+        if(ans1 > ans2)
+        {
+            printf("%lld\n", ans2);
+        }
+        else
+            printf("%lld\n", ans1);
+    }
+    return 0;
+}
