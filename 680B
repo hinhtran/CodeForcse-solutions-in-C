@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[105];
+    int n, m;
+    scanf("%d%d", &n, &m);
+    for(int i = 1; i <= n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    int mark = 0;
+    if(a[m])
+        mark++;
+    for(int i = 1; ;i++)
+    {
+        if(m-i > 0 && m+i <= n)
+        {
+            if(a[m-i] && a[m+i])
+                mark += 2;
+        }
+        else if(m-i <= 0 && m+i <= n)
+        {
+            if(a[m+i])
+                mark++;
+        }
+        else if(m-i > 0 && m+i > n)
+        {
+            if(a[m-i])
+                mark++;
+        }
+        else break;
+    }
+    printf("%d\n", mark);
+    return 0;
+}
