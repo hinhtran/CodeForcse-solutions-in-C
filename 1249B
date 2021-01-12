@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int y = 0;
+int a[1000010];
+void dfs(int x, int z)
+{
+    if(x == z)
+        return ;
+        y++;
+    dfs(a[x], z);
+}
+
+int main()
+{
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        int m;
+        scanf("%d", &m);
+        for(int i = 1; i <= m; i++)
+            scanf("%d", &a[i]);
+        for(int i = 1; i <= m; i++)
+        {
+            y = 1;
+            dfs(a[i], i);
+            printf("%d", y);
+            if(i != m)
+                printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
