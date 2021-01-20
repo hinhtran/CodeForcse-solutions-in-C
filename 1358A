@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int t, n, m;
+    scanf("%d", &t);
+    while(t--)
+    {
+        double A, B;
+        scanf("%d%d", &n, &m);
+        A = n, B = m;
+        long long int ans = 0;
+        ans = ceil((A*B) / 2);
+        printf("%lld\n", ans);
+    }
+    return 0;
+}
