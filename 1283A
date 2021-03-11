@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int t,h,m,r;
+    scanf("%lld",&t);
+    while(t--)
+    {
+        scanf("%lld%lld",&h,&m);
+        r = ((24-h)*60) - m;
+        printf("%lld\n",r);
+    }
+    return 0;
+}
